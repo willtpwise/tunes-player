@@ -1,0 +1,29 @@
+/**
+ Colour palette
+*/
+
+$grey-base: #ccc;
+$grey-light: #f2f2f2;
+$grey-dark: #636363;
+
+$brand-primary: #008bce;
+$brand-secondary: darken($brand-primary, 15%);
+
+/**
+ Spacing
+*/
+$space-base: 30px;
+$space-small: 15px;
+$space-large: 50px;
+
+/**
+ Radius
+*/
+$radius-base: 3px;
+$radius-small: 2px;
+$radius-large: 4px;
+
+/**
+ Responsive breaks
+*/
+$break-mobile: 768px;

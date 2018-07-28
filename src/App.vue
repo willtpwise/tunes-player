@@ -1,14 +1,17 @@
-<template>
-  <div id="app">
-    <router-view/>
-  </div>
-</template>
-
 <script>
-export default {
-  name: 'App'
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+@Component
+export default class App extends Vue {
+
 }
 </script>
 
-<style>
+<template>
+  <div class="app">
+    <router-view />
+  </div>
+</template>
+
+<style lang="scss" scoped>
 </style>
