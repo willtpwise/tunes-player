@@ -8,10 +8,10 @@ A copy of the app is running [here](http://tunes-player.gcbdv.s3-website-us-east
 
 Supported on the latest version of the following browsers.
 
-[] Safari Mac OS
-[] Firefox Mac OS
-[] Safari iOS
-[] Google Chrome Mac OS
+[ ] Safari Mac OS
+[ ] Firefox Mac OS
+[ ] Safari iOS
+[ ] Google Chrome Mac OS
 
 ## Supported features
 
