@@ -25,7 +25,14 @@ export default class AlbumBar extends Vue {
   }
 
   fetchFromRoute () {
-    this.fetch(this.$route.params.albumId)
+    try {
+      this.fetch(this.$route.params.albumId)
+    } catch (e) {
+      const title = 'Album not available'
+      const message = `Uh oh. The album you're looking for isn't available at the moment. Try again soon`
+      miniToastr.warn(message, title)
+      console.error(e)
+    }
   }
 
   created () {

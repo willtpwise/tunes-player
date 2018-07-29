@@ -22,6 +22,11 @@ const router = new Router({
           component: AlbumBar
         }
       ]
+    },
+
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

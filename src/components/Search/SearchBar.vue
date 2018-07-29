@@ -1,6 +1,7 @@
 <script>
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { namespace } from 'vuex-class'
+import miniToastr from 'mini-toastr'
 
 import SearchField from './SearchField'
 import SearchResults from './SearchResults'
@@ -8,6 +9,7 @@ import AudioController from '@/components/AudioController'
 import Loader from '@/components/Loader'
 
 const Search = namespace('Search')
+const Audio = namespace('Audio')
 
 @Component({
   components: {
@@ -20,6 +22,7 @@ const Search = namespace('Search')
 export default class SearchBar extends Vue {
   @Search.Action search
   @Search.State results
+  @Audio.State song
 
   searching = false
   searchTerm = null
@@ -39,7 +42,10 @@ export default class SearchBar extends Vue {
       this.searching = true
       await this.search(this.searchTerm)
     } catch (e) {
-      // TODO
+      const title = 'Search failed'
+      const message = 'Uh oh. The search operation failed. Try again soon'
+      miniToastr.warn(message, title)
+      console.error(e)
     } finally {
       this.searching = false
     }
@@ -64,7 +70,7 @@ export default class SearchBar extends Vue {
       <p>Nothing could be found matching that search criteria</p>
     </div>
 
-    <div class="search_bar-controller">
+    <div class="search_bar-controller" v-if="song">
       <audio-controller />
     </div>
 

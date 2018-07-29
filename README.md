@@ -1,27 +1,46 @@
-# tunes-player
+# Tunes player
 
-> A Vue.js project
+> An iTunes music player, built with Vue.js
 
-## Build Setup
+A copy of the app is running [here](http://tunes-player.gcbdv.s3-website-us-east-1.amazonaws.com/albums/879376073?term=Bam)
 
-``` bash
-# install dependencies
-npm install
+## Supported browsers
 
-# serve with hot reload at localhost:8080
-npm run dev
+Supported on the latest version of the following browsers.
 
-# build for production with minification
-npm run build
+[] Safari Mac OS
+[] Firefox Mac OS
+[] Safari iOS
+[] Google Chrome Mac OS
 
-# build for production and view the bundle analyzer report
-npm run build --report
+## Supported features
 
-# run unit tests
-npm run unit
+* Auto-search (key entry)
+* When a song finishes, it rewinds and can be played again
+* Current-song indicators
+* Mobile responsive
 
-# run all tests
-npm test
+## Local development
+
+**Prerequisites:** NPM, Node
+
 ```
+npm i
+npm start
+```
+The app will spin up at [http://localhost:8080](http://localhost:8080)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Production deployment
+
+```
+npm i
+npm run build
+```
+A copy of the production build will appear in `/dist`, ready for deployment to an S3 bucket.
+
+## Tech choices
+
+* Frontend: Vue
+* Unit tests: Jest
+* State management: Vuex
+* Styles: SCSS (no frameworks)
