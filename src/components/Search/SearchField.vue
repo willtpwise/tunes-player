@@ -1,5 +1,6 @@
 <script>
 import { Vue, Component, Prop } from 'vue-property-decorator'
+import { merge } from 'lodash'
 
 @Component
 export default class SearchField extends Vue {
@@ -16,7 +17,7 @@ export default class SearchField extends Vue {
 
   pushTermToRoute (term) {
     this.$router.push({
-      query: { term }
+      query: merge(this.$route.query, { term })
     })
   }
 

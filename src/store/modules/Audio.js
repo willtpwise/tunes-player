@@ -7,7 +7,6 @@ export default {
 
   state: {
     song: null,
-    enqueued: null,
     playing: false
   },
 
@@ -24,15 +23,11 @@ export default {
 
     setPlaying (state, payload) {
       state.playing = payload
-    },
-
-    setEnqueue (state, payload) {
-      state.enqueued = payload
     }
   },
 
   actions: {
-    play ({ commit, state }) {
+    play ({ commit }) {
       service.play()
       commit('setPlaying', true)
     },
@@ -52,10 +47,6 @@ export default {
       }
 
       commit('setSong', song)
-    },
-
-    enqueueSong ({ commit }, song) {
-      commit('setEnqueue', song)
     }
   }
 }

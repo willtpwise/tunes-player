@@ -19,11 +19,14 @@ export default class SearchResults extends Vue {
   @Audio.Action play
   @Audio.Getter isPlaying
 
-  playSongOnSelection () {
-    const screenWidth = document.body.clientWidth
-    const mobileThreshold = 768
+  mobileThreshold = 768
 
-    return screenWidth <= mobileThreshold
+  playSongOnSelection () {
+    return this.screenWidth() <= this.mobileThreshold
+  }
+
+  screenWidth () {
+    return document.body.clientWidth
   }
 
   handleSongSelection (song) {

@@ -36,15 +36,19 @@ export default class AlbumBar extends Vue {
 
 <template>
   <div class="album_bar" v-if="album">
-    <figure class="album_bar-artwork">
-      <img :src="album.artworkUrl100" :alt="album.collectionName">
-    </figure>
+    <section role="region">
+      <figure class="album_bar-artwork">
+        <img :src="album.artworkUrl100" :alt="album.collectionName">
+      </figure>
 
-    <div class="album_bar-controller">
-      <audio-controller />
-    </div>
+      <div class="album_bar-controller">
+        <audio-controller />
+      </div>
+    </section>
 
-    <album-track-list :tracks="songs" />
+    <section role="region">
+      <album-track-list :tracks="songs" />
+    </section>
   </div>
 </template>
 

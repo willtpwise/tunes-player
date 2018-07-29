@@ -1,10 +1,9 @@
 <script>
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import PlayingIndicatorIcon from '@/assets/images/volume-up-solid.svg'
 
 @Component
 export default class CurrentSongIndicator extends Vue {
-  icon = PlayingIndicatorIcon
+  icon = '/static/images/volume-up-solid.svg'
 }
 </script>
 

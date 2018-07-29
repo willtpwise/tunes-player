@@ -1,8 +1,6 @@
 <script>
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import { namespace } from 'vuex-class'
-import PlayIcon from '@/assets/images/play-circle-regular.svg'
-import PauseIcon from '@/assets/images/pause-circle-regular.svg'
 
 const Audio = namespace('Audio')
 
@@ -13,15 +11,18 @@ export default class AudioController extends Vue {
   @Audio.Action play
   @Audio.Action pause
 
-  playIcon = PlayIcon
-  pauseIcon = PauseIcon
+  playIcon = '/static/images/play-circle-regular.svg'
+  pauseIcon = '/static/images/pause-circle-regular.svg'
+
+  playAssist = 'Play'
+  pauseAssist = 'Pause'
 
   get icon () {
-    return this.playing ? PauseIcon : PlayIcon
+    return this.playing ? this.pauseIcon : this.playIcon
   }
 
   get assist () {
-    return this.playing ? 'Pause' : 'Play'
+    return this.playing ? this.pauseAssist : this.playAssist
   }
 
   get disabled () {

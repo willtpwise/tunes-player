@@ -1,11 +1,8 @@
 <script>
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { namespace } from 'vuex-class'
 
 import SearchBar from '@/components/Search/SearchBar'
 import AlbumBar from '@/components/Album/AlbumBar'
-
-const Search = namespace('Search')
 
 @Component({
   components: {
@@ -14,25 +11,24 @@ const Search = namespace('Search')
   }
 })
 export default class Player extends Vue {
-
   get playerOpen () {
     return this.$route.name === 'Album'
-  }
-
-  created () {
-    console.log(this)
   }
 }
 </script>
 
 <template>
-  <div class="player" :class="{ 'player--open': playerOpen }">
-    <search-bar class="player-aside" />
+  <article class="player" :class="{ 'player--open': playerOpen }">
 
-    <div class="player-featured">
+    <aside class="player-aside">
+      <search-bar />
+    </aside>
+
+    <main class="player-featured">
       <router-view />
-    </div>
-  </div>
+    </main>
+
+  </article>
 </template>
 
 <style lang="scss" scoped>

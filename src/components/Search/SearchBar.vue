@@ -23,6 +23,7 @@ export default class SearchBar extends Vue {
 
   searching = false
   searchTerm = null
+  autoSearchTimeout = 1500
 
   @Watch('searchTerm')
   onSearchTermChange (phrase) {
@@ -30,7 +31,7 @@ export default class SearchBar extends Vue {
       if (phrase === this.searchTerm) {
         this.handleSearch()
       }
-    }, 1500)
+    }, this.autoSearchTimeout)
   }
 
   async handleSearch () {
